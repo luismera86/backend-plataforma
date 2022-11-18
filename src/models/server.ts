@@ -10,10 +10,10 @@ class Server {
     this.app = express()
     this.port = process.env.PORT || '3000'
 
-    this.router()
     this.listen()
-    this.middlewares()
     this.dbConnection()
+    this.middlewares()
+    this.router()
   }
 
   async dbConnection() {

@@ -1,16 +1,5 @@
 import { Request, Response } from 'express'
-
-import { User } from '../models'
-
-// export const getUsers = async (req: Request, res: Response) => {
-//     try {
-
-//     } catch (error) {
-//   console.log(error)
-// res.status(500).json({ msg: error })
-
-//     }
-// }
+import { User, UserModel } from '../models'
 
 export const getUsers = async (req: Request, res: Response) => {
 	try {
@@ -22,40 +11,49 @@ export const getUsers = async (req: Request, res: Response) => {
 	}
 }
 
-export const getUsersById = async (req: Request, res: Response) => {
-	try {
-		const { id } = req.params
-		const user = await User.findByPk(id)
-
-		if (!user) {
-			return res.status(400).json({ msg: 'El usuario con ese id no existe' })
-		}
-		res.status(200).json({ user })
-	} catch (error) {
-		console.log(error)
-		res.status(500).json({ msg: error })
-	}
-}
-
-export const postUsers = async (req: Request, res: Response) => {
-	const { body } = req
-	try {
-		console.log(body)
-		const user = await User.create(body)
-
-		res.status(200).json({ user })
-	} catch (error) {
-		console.log(error)
-		res.status(500).json({ msg: error })
-	}
-}
-
-export const putUsers = async (req: Request, res: Response) => {
-	const { name, email } = req.body
+export const getUserById = async (req: Request, res: Response) => {
 	const { id } = req.params
 	try {
-    const user = await User.findByPk(id)
-    await user?.update({email, name})
+		const user = await User.findByPk(id)
+
+		res.status(200).json({ user })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
+export const postUser = async (req: Request, res: Response) => {
+	const { name, password, email }: UserModel = req.body
+	try {
+		const user = await User.create({ name, password, email })
+
+		res.status(200).json({ user })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
+export const putUser = async (req: Request, res: Response) => {
+	const { name, email }: UserModel = req.body
+	const { id } = req.params
+	try {
+		const user = await User.findByPk(id)
+		await user?.update({ name, email })
+
+		res.status(200).json({ user })
+	} catch (error) {
+		console.log(error)
+		res.status(500).json({ msg: error })
+	}
+}
+
+export const deleteUser = async (req: Request, res: Response) => {
+	const { id } = req.params
+	try {
+		const user = await User.findByPk(id)
+		await user?.destroy()
 
 		res.status(200).json({ user })
 	} catch (error) {

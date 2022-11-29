@@ -18,7 +18,8 @@ class Server {
 
   async dbConnection() {
     try {
-      await db.authenticate()
+      await db.sync( {force: true})
+      // await db.authenticate()
       console.log('Database online')
     } catch (error) {
       console.log(error)

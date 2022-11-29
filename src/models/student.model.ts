@@ -1,24 +1,24 @@
 import { DataTypes } from 'sequelize'
 import db from '../db/config'
 
-const Student = db.define('Student', {
+const Student = db.define('student', {
 	name: {
-		type: DataTypes.STRING,
+		type: DataTypes.TEXT,
 	},
 	commission: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     },
-    deliveryOne: {
-        type: DataTypes.STRING
+    noteOne: {
+        type: DataTypes.TEXT
     },
-    deliveryTow: {
-        type: DataTypes.STRING
+    noteTow: {
+        type: DataTypes.TEXT
     },
-    deliveryThree: {
-        type: DataTypes.STRING
+    noteThree: {
+        type: DataTypes.TEXT
     },
 	status: {
-		type: DataTypes.BOOLEAN,
+		type: DataTypes.TINYINT,
 	},
 })
 

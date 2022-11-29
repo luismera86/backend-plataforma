@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize'
 import db from '../db/config'
 
-const Feedback = db.define('Feedback', {
+const Feedback = db.define('feedback', {
 	feedback: {
 		type: DataTypes.STRING,
 	}

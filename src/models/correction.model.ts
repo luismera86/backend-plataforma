@@ -3,39 +3,39 @@ import db from '../db/config'
 
 // TODO ver como relacionar con las tablas del students
 
-const Correction = db.define('Correction', {
+const Correction = db.define('correction', {
 	studentName: {
-		type: DataTypes.STRING,
+		type: DataTypes.TEXT,
 	},
 	course: {
-		type: DataTypes.STRING,
+		type: DataTypes.TEXT,
 	},
 	commission: {
-    type: DataTypes.NUMBER,
+    type: DataTypes.INTEGER,
     },
-    deliveryOne: {
-        type: DataTypes.STRING
+    preDeliveryOne: {
+        type: DataTypes.TEXT
     },
-    deliveryTow: {
-        type: DataTypes.STRING
+    preDeliveryTow: {
+        type: DataTypes.TEXT
     },
-    deliveryThree: {
-        type: DataTypes.STRING
+    preDeliveryThree: {
+        type: DataTypes.TEXT
     },
     commentOne: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
     commentTow: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
     commentThree: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
     commentFour: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
     commentFive: {
-        type: DataTypes.STRING
+        type: DataTypes.TEXT
     },
 	
 })

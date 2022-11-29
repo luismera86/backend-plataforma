@@ -6,18 +6,21 @@ const Student = db.define<StudentModel>('student', {
 	name: {
 		type: DataTypes.TEXT,
 	},
+	course: {
+		type: DataTypes.TEXT,
+	},
 	commission: {
-    type: DataTypes.INTEGER,
-    },
-    noteOne: {
-        type: DataTypes.TEXT
-    },
-    noteTow: {
-        type: DataTypes.TEXT
-    },
-    noteThree: {
-        type: DataTypes.TEXT
-    },
+		type: DataTypes.INTEGER,
+	},
+	noteOne: {
+		type: DataTypes.TEXT,
+	},
+	noteTow: {
+		type: DataTypes.TEXT,
+	},
+	noteThree: {
+		type: DataTypes.TEXT,
+	},
 	status: {
 		type: DataTypes.TINYINT,
 	},

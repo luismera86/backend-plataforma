@@ -1,9 +1,10 @@
+import { CorrectionModel } from './interfaces'
 import { DataTypes } from 'sequelize'
 import db from '../db/config'
 
 // TODO ver como relacionar con las tablas del students
 
-const Correction = db.define('correction', {
+const Correction = db.define<CorrectionModel>('correction', {
 	studentName: {
 		type: DataTypes.TEXT,
 	},

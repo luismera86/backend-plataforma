@@ -1,4 +1,4 @@
-import { getUsers, getUsersById, postUsers } from '../controllers/users.controllers'
+import { getUsers, getUsersById, postUsers } from '../controllers/users.controller'
 
 import { Router } from 'express'
 

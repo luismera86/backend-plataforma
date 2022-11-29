@@ -1,7 +1,8 @@
 import { DataTypes } from 'sequelize'
+import { UserModel } from './interfaces'
 import db from '../db/config'
 
-const User = db.define('user', {
+const User = db.define<UserModel>('user', {
 	name: {
 		type: DataTypes.STRING,
 	},
@@ -9,14 +10,18 @@ const User = db.define('user', {
     type: DataTypes.STRING,
     allowNull: true
 	},
-	status: {
-		type: DataTypes.BOOLEAN,
+	password: {
+		type: DataTypes.STRING
 	},
 	typeUser: {
 		type: DataTypes.STRING,
     values: ['Admin', 'User'],
     defaultValue: 'User',
 	},
+	status: {
+		type: DataTypes.STRING,
+		defaultValue: true
+	}
 })
 
 export default User

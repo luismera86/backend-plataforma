@@ -1,7 +1,8 @@
 import { DataTypes } from 'sequelize'
+import { StudentModel } from './interfaces'
 import db from '../db/config'
 
-const Student = db.define('student', {
+const Student = db.define<StudentModel>('student', {
 	name: {
 		type: DataTypes.TEXT,
 	},

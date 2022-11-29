@@ -1,9 +1,10 @@
 import { DataTypes } from 'sequelize'
+import { PreDeliveryModel } from './interfaces'
 import db from '../db/config'
 
 // TODO ver como relacionar con las tablas del students
 
-const PreDelivery = db.define('preDelivery', {
+const PreDelivery = db.define<PreDeliveryModel>('preDelivery', {
 	preDeliveryNumber: {
 		type: DataTypes.INTEGER,
 	},
